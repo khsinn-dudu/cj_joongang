@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="다우·CJ컨소시엄의 중앙일보 인수 완료 시 CJ의 입지 변화를 6개 관점으로 정리한 브리핑">
+<meta property="og:title" content="CJ의 중앙일보 인수 분석">
+<meta property="og:description" content="다우·CJ컨소시엄의 중앙일보 인수 완료 시 CJ의 입지 변화를 6개 관점으로 정리한 브리핑">
+<meta property="og:type" content="article">
+<title>CJ의 중앙일보 인수 분석</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700;800&family=IBM+Plex+Sans+KR:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+/* Layout: single reading column briefing, stake bar as the one visual anchor, numbered perspectives (they are the report's own section order) */
+:root{
+  --bg:#f3f5f7; --surface:#ffffff; --fg:#1b2430; --muted:#5b6675; --line:#d6dce3;
+  --cj:#1f6f6b; --cjsoft:#d7ebe8; --ssg:#6aa8a2; --daou:#3c4a5c; --saram:#8b97a6;
+  --accent:#1f6f6b;
+  --display:"Nanum Myeongjo", "Noto Serif KR", serif;
+  --body:"IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#12171d; --surface:#1a2129; --fg:#e4e9ef; --muted:#9aa5b2; --line:#2c3541;
+  --cj:#4fb3ab; --cjsoft:#1e3533; --ssg:#8ccdc6; --daou:#7f8ea3; --saram:#55616f; --accent:#4fb3ab; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#12171d; --surface:#1a2129; --fg:#e4e9ef; --muted:#9aa5b2; --line:#2c3541;
+  --cj:#4fb3ab; --cjsoft:#1e3533; --ssg:#8ccdc6; --daou:#7f8ea3; --saram:#55616f; --accent:#4fb3ab; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.7}
+.wrap{max-width:720px;margin:0 auto;padding-block:40px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:40px}
+.eyebrow{font-size:12px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;font-weight:600}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(28px,6vw,40px);line-height:1.25;margin:8px 0 16px;text-wrap:balance}
+h2{font-family:var(--display);font-weight:700;font-size:22px;line-height:1.35;margin:0;text-wrap:balance}
+.premise{margin:0 0 16px;padding:10px 14px;border-left:3px solid var(--accent);background:var(--surface);font-size:15px;color:var(--fg)}
+.premise b{color:var(--accent)}
+.lede{font-size:18px;margin:0;max-width:62ch}
+.lede b{color:var(--accent)}
+.meta{font-size:13px;color:var(--muted);margin-top:12px}
+.stake{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px;display:flex;flex-direction:column;gap:16px}
+.bar{display:flex;height:40px;border-radius:6px;overflow:hidden}
+.bar span{display:block;height:100%}
+.legend{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 16px;font-size:14px}
+.legend div{display:flex;gap:8px;align-items:baseline;min-width:0}
+.sw{width:10px;height:10px;border-radius:2px;flex:none;transform:translateY(1px)}
+.legend .v{margin-left:auto;font-family:var(--mono);font-variant-numeric:tabular-nums;color:var(--muted);white-space:nowrap}
+.camps{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px;gap:12px;flex-wrap:wrap}
+.camps strong{color:var(--fg);font-family:var(--mono)}
+.sec{display:grid;grid-template-columns:44px minmax(0,1fr);gap:4px 16px}
+.num{font-family:var(--mono);font-size:14px;color:var(--accent);padding-top:5px}
+.sec ul{margin:12px 0 0;padding-left:18px;display:flex;flex-direction:column;gap:8px}
+.sec li::marker{color:var(--muted)}
+.sec .body{min-width:0}
+.tag{display:inline-block;font-size:12px;padding:1px 8px;border-radius:99px;background:var(--cjsoft);color:var(--cj);font-weight:600;margin-left:6px;vertical-align:2px}
+.bottom{background:var(--cjsoft);border-radius:10px;padding:20px 22px}
+.bottom p{margin:0;font-size:17px}
+a.src{color:inherit;text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:1px;text-underline-offset:3px}
+a.src:hover{color:var(--accent)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media (max-width:460px){.sec{grid-template-columns:1fr}.num{padding-top:0}.legend{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">디지털트리니티 제이스 · 2026.11.04</div>
+    <h1>중앙일보 인수 완료 시, CJ는 무엇을 얻고 무엇에 묶이나</h1>
+    <p class="premise"><b>11월 5일</b> 다우·CJ컨소시엄이 중앙일보와 인수계약을 체결한다는 언론사 속보가 나왔습니다. 이 분석은 인수가 확정된다는 것을 전제로 합니다.</p>
+    <p class="lede">CJ는 이번 딜로 <b>중앙일보 공동 최대주주급이자 범삼성가 진영의 실질적 리더</b>가 됩니다. 다만 편집권 독립, 고용 승계, 신문법 규제가 걸려 있어 영향력은 커지지만 마음대로 쓸 수는 없는 자산에 가깝습니다.</p>
+    <div class="meta">다우·CJ컨소시엄 조건부 신주인수계약(SSA) · 총 5,200억 원 · 제3자 배정 유상증자</div>
+  </header>
+
+  <section class="stake" aria-label="컨소시엄 출자 비율">
+    <div class="eyebrow">신주 인수 출자 비율</div>
+    <div class="bar" role="img" aria-label="다우기술 36.5%, 사람인 13.7%, 씨제이 35.7%, 신세계 14.1%">
+      <span style="width:36.5%;background:var(--daou)"></span>
+      <span style="width:13.7%;background:var(--saram)"></span>
+      <span style="width:35.7%;background:var(--cj)"></span>
+      <span style="width:14.1%;background:var(--ssg)"></span>
+    </div>
+    <div class="legend">
+      <div><i class="sw" style="background:var(--daou)"></i>다우기술<span class="v">36.5% · 약 1,898억</span></div>
+      <div><i class="sw" style="background:var(--cj)"></i>씨제이㈜<span class="v">35.7% · 약 1,856억</span></div>
+      <div><i class="sw" style="background:var(--saram)"></i>사람인<span class="v">13.7% · 약 712억</span></div>
+      <div><i class="sw" style="background:var(--ssg)"></i>신세계<span class="v">14.1% · 약 733억</span></div>
+    </div>
+    <div class="camps"><span>다우키움 계열 <strong>50.2%</strong></span><span>범삼성(CJ+신세계) <strong>49.8%</strong></span></div>
+  </section>
+
+  <section class="sec">
+    <div class="num">01</div>
+    <div class="body">
+      <h2>지분·지배구조</h2>
+      <ul>
+        <li>CJ와 다우기술의 투입액은 사실상 동급입니다. 진영별로 보면 거의 반반입니다.</li>
+        <li>이렇게 쪼갠 이유는 신문법입니다. <a class="src" target="_blank" rel="noopener noreferrer" href="https://biz.sbs.co.kr/amp/article/20000340868">대기업집단은 일간신문 지분을 각각 최대 50%까지만 가질 수 있습니다</a>.</li>
+        <li>시장에서는 다우키움이 최대 출자자지만, 실제 인수 구상은 CJ가 주도하고 <a class="src" target="_blank" rel="noopener noreferrer" href="https://core.asiae.co.kr/article/2026102015370607333">다우키움은 재무적투자자에 가깝다는 해석</a>이 나옵니다.</li>
+        <li>CJ는 원래 CJ올리브네트웍스를 통해 <a class="src" target="_blank" rel="noopener noreferrer" href="https://ceoscoredaily.com/page/view/2026102014145424853">지분 9.24%를 가진 3대 주주</a>였습니다. 증자로 희석되지만 이번 딜의 명분이 됐습니다.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="num">02</div>
+    <div class="body">
+      <h2>미디어 포트폴리오 완성</h2>
+      <ul>
+        <li><a class="src" target="_blank" rel="noopener noreferrer" href="https://biz.sbs.co.kr/amp/article/20000340973">CJ ENM은 tvN·Mnet·OCN과 CJ CGV를 운영</a>하지만 지금까지 보도 기능이 없었습니다.</li>
+        <li>뉴스·오피니언 축이 처음 생기면서 콘텐츠 그룹에서 종합 미디어 그룹으로 위상이 바뀝니다.</li>
+        <li>현실적인 시너지는 지면보다 디지털 쪽입니다. 티빙 연계, 숏폼·영상 저널리즘, 문화·엔터 섹션 강화가 예상됩니다.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="num">03</div>
+    <div class="body">
+      <h2>상징성과 대외 영향력</h2>
+      <ul>
+        <li>성사되면 중앙일보는 <a class="src" target="_blank" rel="noopener noreferrer" href="https://biz.sbs.co.kr/amp/article/20000341061">계열 분리 27년 만에 범삼성가로 돌아갑니다</a>. 이재현 회장은 장손으로서 창업주 유산 회복이라는 명분을 쥡니다.</li>
+        <li>메이저 일간지 대주주 지위는 대관, 여론 접점, 재계 발언권에서 무형의 레버리지가 됩니다.</li>
+        <li>반대로 재벌의 언론 소유라는 비판도 받습니다. CJ·신세계 관련 기사 하나하나가 편집권 독립의 시험대가 됩니다.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="num">04</div>
+    <div class="body">
+      <h2>재무와 운영 제약</h2>
+      <ul>
+        <li>1,800억 원대는 그룹 규모상 감당 가능하지만 신문업은 성장 산업이 아니고, 투입금은 전액 채무 상환에 쓰입니다.</li>
+        <li>고용 보장, 단협 승계, 인위적 구조조정 금지 약속 때문에 비용 절감으로 수익을 올리기 어렵습니다.</li>
+        <li>워크아웃 졸업이 늦어지면 추가 지원 압박이 생길 수 있습니다.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="num">05</div>
+    <div class="body">
+      <h2>다음 변수, JTBC<span class="tag">관전 포인트</span></h2>
+      <ul>
+        <li>JTBC는 이번 딜과 별개로 ‘아는 형님’, ‘냉장고를 부탁해’ 등 <a class="src" target="_blank" rel="noopener noreferrer" href="https://www.journalist.or.kr/m/m_article.html?no=61725">예능 IP를 앞세워 매각을 추진 중</a>입니다.</li>
+        <li>CJ가 방송·IP까지 노릴지가 관건입니다. 다만 종편은 대기업 소유 한도가 따로 있어 구조가 복잡해집니다.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="num">06</div>
+    <div class="body">
+      <h2>광고시장 관점</h2>
+      <ul>
+        <li>tvN·티빙 영상 인벤토리에 중앙 디지털 뉴스 인벤토리, 신세계 리테일미디어까지 엮은 크로스 미디어 패키지가 가능해집니다. 대형 광고주 협상력이 커집니다.</li>
+        <li>CJ ENM 계열 렙(메조미디어)의 라인업이 강화될 수 있습니다. 중앙일보 디지털 광고 영업 창구가 재편되는지 지켜볼 만합니다.</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="bottom">
+    <p>CJ는 큰 돈을 들이지 않고 <b>명분(범삼성), 콘텐츠(뉴스), 영향력</b>을 한꺼번에 확보했습니다. 대신 편집권 독립과 고용 약속이라는 족쇄를 함께 떠안았습니다.</p>
+  </div>
+
+</div>
+</body>
+</html>
